@@ -5,6 +5,7 @@ FROM php:7.3-fpm
 WORKDIR /root
 RUN apt-get update            
 RUN apt-get install -y curl
+RUN apt-get update && apt-get install procps
 
 # step 3
 RUN curl -sS https://getcomposer.org/installer | php  
@@ -21,9 +22,9 @@ RUN ["/bin/bash", "-c", "source ~/.bashrc"]
 
 # step 6
 # EXPOSE 9000
-EXPOSE 8000
+EXPOSE 80
 CMD ["php-fpm"]
 
-RUN laravel new first_laravel_project
-RUN cd /root/first_laravel_project
-RUN php artisan serve --host 0.0.0.0 --port 8000
+# RUN laravel new first_laravel_project
+# RUN cd /root/first_laravel_project
+# RUN php artisan serve --host 0.0.0.0 --port 80
