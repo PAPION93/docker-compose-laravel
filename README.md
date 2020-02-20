@@ -13,4 +13,4 @@ docker exec -it [container name] /bin/bash
 
 laravel
 laravel new first_laravel_project
-php artisan serve --host 0.0.0.0 --port 80
+php artisan serve --host 0.0.0.0 --port 8000
