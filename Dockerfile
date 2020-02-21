@@ -1,5 +1,6 @@
 # step 1
 FROM php:7.3-fpm
+MAINTAINER PAPION93 <sjun1319@gmail.com>
 
 # step 2
 WORKDIR /root
