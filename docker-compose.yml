@@ -22,6 +22,8 @@ services:
     build:
         context: .
         dockerfile: ./Dockerfile
+    ports:
+      - "22:22"
     volumes:
       - ./source:/source
     

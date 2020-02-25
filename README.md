@@ -1,6 +1,10 @@
 # docker-study
  Let's learn docker
 
+### Docker image or Container 정보출력
+`docker inspect [Container]`
+
+
 ### Dockerfile Build
 `docker build -t [OPTION] PATH URL`  
 `docker build -t username/imagename:1.0 Dokcerfile .`

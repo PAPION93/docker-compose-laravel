@@ -22,10 +22,11 @@ RUN ["/bin/bash", "-c", "echo PATH=$PATH:~/.composer/vendor/bin/ >> ~/.bashrc"]
 RUN ["/bin/bash", "-c", "source ~/.bashrc"]
 
 # step 6
-# EXPOSE 9000
-EXPOSE 80
+EXPOSE 81
+EXPOSE 22
 CMD ["php-fpm"]
 
-# RUN laravel new first_laravel_project
-# RUN cd /root/first_laravel_project
-# RUN php artisan serve --host 0.0.0.0 --port 80
+#RUN laravel new first_laravel_project
+#WORKDIR /root/first_laravel_project
+#RUN php artisan serve --host 0.0.0.0 --port 81
+
