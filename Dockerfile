@@ -2,12 +2,12 @@
 FROM php:7.4.3-fpm-alpine3.11 AS custom-laravel
 
 # step 2
-#WORKDIR /root
+WORKDIR /root
 #RUN apt-get update
 #RUN apt-get install -y curl procps vim
 
 RUN apk update \
-    && apk add -u vim procps tzdata bash curl libzip libzip-dev \
+    && apk add -u vim procps tzdata bash curl git libzip libzip-dev \
     && rm -rf /var/cache/apk/*
 
 RUN cp /usr/share/zoneinfo/Asia/Seoul /etc/localtime
@@ -23,12 +23,20 @@ RUN docker-php-ext-install zip
 
 # step 5
 RUN composer global require laravel/installer
-RUN ["/bin/bash", "-c", "echo PATH=$PATH:~/.composer/vendor/bin/ >> ~/.bashrc"]
-RUN ["/bin/bash", "-c", "source ~/.bashrc"]
+# RUN ["/bin/bash", "-c", "echo PATH=$PATH:~/.composer/vendor/bin/ >> ~/.bashrc"]
+# RUN ["/bin/bash", "-c", "source ~/.bashrc"]
 
 # step 6
 EXPOSE 81
 CMD ["php-fpm"]
 
-RUN mkdir funsms-messenger
+RUN git clone https://papion9:vkvldyd12!@bitbucket.org/nanoitops/funsms-messenger.git /funsms-messenger
 WORKDIR /root/funsms-messenger
+ENTRYPOINT ["php", "artisan", "serve", "--host", "0.0.0.0", "--port", "81"]
+#CMD php artisan serve --host=0.0.0.0 --port=81
+
+#RUN ["/bin/bash", "-c", "laravel", "new", "f"]
+#RUN laravel new f
+#WORKDIR /root/f
+#RUN php artisan serve --host 0.0.0.0 --port 81
+#ENTRYPOINT ["php", "artisan", "serve", "--host", "0.0.0.0", "--port", "81"]

@@ -6,18 +6,18 @@ services:
       - "80:80"
     volumes:
       - ./proxy/nginx.conf:/etc/nginx/nginx.conf
-    networks:
-      - laravel
+    # networks:
+    #   - laravel
 
   laravel-project:
     build: .
     image: custom-laravel
     volumes:
       - ./funsms-messenger:/root/funsms-messenger
-    networks:
-      - laravel
-    command: ["php", "artisan", "serve", "--host", "0.0.0.0", "--port", "81"]
+    # networks:
+    #   - laravel
+    #command: ["php", "artisan", "serve", "--host", "0.0.0.0", "--port", "81"]
 
-networks:
-  laravel:
-    external: true
+# networks:
+#   laravel:
+#     external: true
