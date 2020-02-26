@@ -3,12 +3,12 @@ FROM php:7.4.3-fpm-alpine3.11 AS custom-laravel
 
 # step 2
 #WORKDIR /root
-#RUN apt-get update            
+#RUN apt-get update
 #RUN apt-get install -y curl procps vim
 
 RUN apk update \
-        && apk add -u vim procps tzdata bash curl libzip libzip-dev \
-        && rm -rf /var/cache/apk/*
+    && apk add -u vim procps tzdata bash curl libzip libzip-dev \
+    && rm -rf /var/cache/apk/*
 
 RUN cp /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 RUN echo "Asia/Seoul" > /etc/timezone
@@ -33,6 +33,7 @@ CMD ["php-fpm"]
 
 RUN mkdir laravel
 WORKDIR /root/laravel
+
 #RUN ["/bin/bash", "-c", "laravel", "new", "f"]
 #RUN laravel new f
 #WORKDIR /root/f

@@ -6,28 +6,18 @@ services:
       - "80:80"
     volumes:
       - ./proxy/nginx.conf:/etc/nginx/nginx.conf
-    networks:
-      - laravel
+#    networks:
+#      - laravel
 
-  # # NGINX Web
-  # web:
-  #   image: nginx:latest
-  #   expose:
-  #     - "8080"
-  #   volumes:
-  #     - ./source:/source
-  #     - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-      
   my-laravel:
     build: .
     image: custom-laravel
     volumes:
-      - ./source:/source
       - ./laravel:/root/laravel
-    networks:
-      - laravel
+#    networks:
+#      - laravel
     command: ["php", "artisan", "serve", "--host", "0.0.0.0", "--port", "81"]
 
-networks:
-  laravel:
-    external: true
+#networks:
+#  laravel:
+#    external: true
