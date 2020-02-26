@@ -28,14 +28,7 @@ RUN ["/bin/bash", "-c", "source ~/.bashrc"]
 
 # step 6
 EXPOSE 81
-EXPOSE 77
 CMD ["php-fpm"]
 
-RUN mkdir laravel
-WORKDIR /root/laravel
-
-#RUN ["/bin/bash", "-c", "laravel", "new", "f"]
-#RUN laravel new f
-#WORKDIR /root/f
-#RUN php artisan serve --host 0.0.0.0 --port 81
-#ENTRYPOINT ["php", "artisan", "serve", "--host", "0.0.0.0", "--port", "81"]
+RUN mkdir funsms-messenger
+WORKDIR /root/funsms-messenger
