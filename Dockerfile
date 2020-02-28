@@ -3,40 +3,31 @@ FROM php:7.4.3-fpm-alpine3.11 AS custom-laravel
 
 # step 2
 WORKDIR /root
-#RUN apt-get update
-#RUN apt-get install -y curl procps vim
 
 RUN apk update \
-    && apk add -u vim procps tzdata bash curl git libzip libzip-dev \
-    && rm -rf /var/cache/apk/*
+        && apk add -u vim procps tzdata bash curl libzip libzip-dev \
+        && rm -rf /var/cache/apk/*
 
 RUN cp /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 RUN echo "Asia/Seoul" > /etc/timezone
 
 # step 3
+# Composer Install
 RUN curl -sS https://getcomposer.org/installer | php  
 RUN mv composer.phar /usr/bin/composer
 
 # step 4
-#RUN apt-get install -y zlib1g-dev && apt-get install -y libzip-dev
+# PHP Extension Install
 RUN docker-php-ext-install zip
 
 # step 5
+# Laravel Install
 RUN composer global require laravel/installer
-# RUN ["/bin/bash", "-c", "echo PATH=$PATH:~/.composer/vendor/bin/ >> ~/.bashrc"]
-# RUN ["/bin/bash", "-c", "source ~/.bashrc"]
 
 # step 6
+# Bind Port
 EXPOSE 81
 CMD ["php-fpm"]
 
-RUN git clone https://papion9:vkvldyd12!@bitbucket.org/nanoitops/funsms-messenger.git /funsms-messenger
-WORKDIR /root/funsms-messenger
-ENTRYPOINT ["php", "artisan", "serve", "--host", "0.0.0.0", "--port", "81"]
-#CMD php artisan serve --host=0.0.0.0 --port=81
-
-#RUN ["/bin/bash", "-c", "laravel", "new", "f"]
-#RUN laravel new f
-#WORKDIR /root/f
-#RUN php artisan serve --host 0.0.0.0 --port 81
-#ENTRYPOINT ["php", "artisan", "serve", "--host", "0.0.0.0", "--port", "81"]
+RUN mkdir laravel
+WORKDIR /root/laravel

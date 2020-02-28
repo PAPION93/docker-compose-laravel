@@ -1,5 +1,1 @@
-# docker-compose-laravel
-
-CentOS 7, Docker
-
-Laravel 환경 구축하기
+# Docker를 이용한 Laravel 개발환경 구축
