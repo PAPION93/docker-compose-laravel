@@ -15,10 +15,10 @@ services:
     build: .
     image: custom-laravel
     volumes:
-      - ./laravel:/root/laravel
+      - ./laravel-project:/root/laravel-project
     networks:
       - laravel
-    command: ["/bin/bash", "entrypoint"]
+    #command: ["/bin/bash", "entrypoint"]
 
 networks:
   laravel:

@@ -29,5 +29,5 @@ RUN composer global require laravel/installer
 EXPOSE 81
 CMD ["php-fpm"]
 
-RUN mkdir laravel
-WORKDIR /root/laravel
+RUN mkdir laravel-project
+WORKDIR /root/laravel-project
