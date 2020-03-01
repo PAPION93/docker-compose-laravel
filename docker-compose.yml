@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 services:
   proxy:
     container_name: m-proxy
@@ -18,7 +18,31 @@ services:
       - ./laravel-project:/root/laravel-project
     networks:
       - laravel
-    #command: ["/bin/bash", "entrypoint"]
+    command: ["/bin/bash", "entrypoint"]
+
+
+    my-mariadb:
+      container_name: m-mariadb
+      build: ./mariadb
+      image: custom-mariadb
+
+      environment:
+        - TZ=Asia/Seoul
+        
+        - MYSQL_ROOT_PASSWROD=test
+        - MYSQL_DATABASE=laravel_db
+        - MYSQL_USER=test
+        - MYSQL_PASSWORD=test
+
+        - MYSQL_ALLOW_EMPTY_PASSWORD=true
+        - CUSTOM=${CUSTOM}
+
+      volumes:
+        - ./mysql/initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
+      ports:
+        - "3306:3306"
+      networks:
+        - laravel
 
 networks:
   laravel:
