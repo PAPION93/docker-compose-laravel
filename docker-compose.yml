@@ -37,10 +37,11 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
       #- CUSTOM=${CUSTOM}
 
-    volumes:
-      - ./mysql/initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
+    #volumes:
+      #- ./mysql/initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
+      - ./mysql:/docker-entrypoint-initdb.d
     ports:
-      - "3306:3306"
+      - "33060:3306"
     networks:
       - laravel
 
