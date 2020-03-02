@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3'
 services:
   proxy:
     container_name: m-proxy
@@ -38,8 +38,7 @@ services:
       #- CUSTOM=${CUSTOM}
 
     volumes:
-      #- ./mysql/initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
-      - ./mysql:/docker-entrypoint-initdb.d
+      - ./mysql/initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
     ports:
       - "3306:3306"
     networks:
