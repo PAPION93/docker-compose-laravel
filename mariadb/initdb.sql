@@ -6,5 +6,6 @@ CREATE TABLE laravelProject.posts(
 
 INSERT INTO laravelProject.posts(title, body) VALUES('My Title', 'My Body');
 
+CREATE USER 'test' IDENTIFIED BY 'secret';
 GRANT ALTER, CREATE, INSERT, SELECT, DELETE, REFERENCES, UPDATE, DROP, EXECUTE, LOCK TABLES, INDEX ON laravelProject.* TO 'test';
 FLUSH PRIVILEGES;
