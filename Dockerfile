@@ -19,6 +19,10 @@ RUN mv composer.phar /usr/bin/composer
 # step 4
 # PHP Extension Install
 RUN docker-php-ext-install zip
+#RUN docker-php-ext-install mbstring
+RUN docker-php-ext-install mysqli
+RUN docker-php-ext-install pdo
+RUN docker-php-ext-install pdo_mysql
 
 # step 5
 # Laravel Install

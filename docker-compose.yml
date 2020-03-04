@@ -29,13 +29,12 @@ services:
     environment:
       - TZ=Asia/Seoul
       
-      - MYSQL_ROOT_PASSWROD=test
-      - MYSQL_DATABASE=laravel_db
-      - MYSQL_USER=test
-      - MYSQL_PASSWORD=test
+      - MYSQL_ROOT_PASSWROD=secret
+      - MYSQL_DATABASE=laravelProject
+      - MYSQL_USER=laravel
+      - MYSQL_PASSWORD=secret
 
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
-      #- CUSTOM=${CUSTOM}
 
     #volumes:
       #- ./mysql/initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
