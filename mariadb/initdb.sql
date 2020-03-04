@@ -1,10 +1,10 @@
-CREATE TABLE posts(
+CREATE TABLE laravelProject.posts(
     id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255),
     body TEXT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO posts(title, body) VALUES('My Title', 'My Body');
+INSERT INTO laravelProject.posts(title, body) VALUES('My Title', 'My Body');
 
 GRANT ALTER, CREATE, INSERT, SELECT, DELETE, REFERENCES, UPDATE, DROP, EXECUTE, LOCK TABLES, INDEX ON laravelProject.* TO 'test';
 FLUSH PRIVILEGES;
