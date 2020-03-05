@@ -4,8 +4,6 @@
 APP_DEBUG : 운영환경에서는 false로 시스템정보 노출하지 않아야 한다.
 
 'timezone' => 'Asia/Seoul'  
-> Default : UTC 이므로 변경해야 한다.  
-
 'locale' => 'ko'  
 
 
@@ -28,4 +26,10 @@ php artisan migrate
 php artisan migrate:rollback
 php artisan migrate:reset
 php artisan migrate:refresh
+```
+
+
+### RESTful Resource Controller 만들기
+```
+php artisan make:controller PostsController --resource
 ```

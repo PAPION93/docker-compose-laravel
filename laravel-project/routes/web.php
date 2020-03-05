@@ -41,3 +41,7 @@ Route::get('/', function () {
     $view->collection = array(1, 2, 3);
     return $view;
 });
+
+Route::get('/', 'IndexController@index');
+
+Route::resource('posts', 'PostsController');
