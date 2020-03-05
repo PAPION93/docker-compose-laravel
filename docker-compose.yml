@@ -30,7 +30,7 @@ services:
       - TZ=Asia/Seoul
       
       - MYSQL_ROOT_PASSWROD=secret
-      - MYSQL_DATABASE=laravelProject
+      - MYSQL_DATABASE=laravel_project
       - MYSQL_USER=laravel
       - MYSQL_PASSWORD=secret
 

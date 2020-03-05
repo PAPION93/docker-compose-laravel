@@ -1,11 +1,11 @@
-CREATE TABLE laravelProject.posts(
+CREATE TABLE laravel_project.posts(
     id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255),
     body TEXT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO laravelProject.posts(title, body) VALUES('My Title', 'My Body');
+INSERT INTO laravel_project.posts(title, body) VALUES('My Title', 'My Body');
 
 CREATE USER 'test' IDENTIFIED BY 'secret';
-GRANT ALTER, CREATE, INSERT, SELECT, DELETE, REFERENCES, UPDATE, DROP, EXECUTE, LOCK TABLES, INDEX ON laravelProject.* TO 'test';
+GRANT ALTER, CREATE, INSERT, SELECT, DELETE, REFERENCES, UPDATE, DROP, EXECUTE, LOCK TABLES, INDEX ON laravel_project.* TO 'test';
 FLUSH PRIVILEGES;

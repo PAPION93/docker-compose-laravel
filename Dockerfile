@@ -5,7 +5,7 @@ FROM php:7.4.3-fpm-alpine3.11 AS custom-laravel
 WORKDIR /root
 
 RUN apk update \
-        && apk add -u vim procps tzdata bash curl libzip libzip-dev mysql-client telnet \
+        && apk add -u vim procps tzdata bash curl libzip libzip-dev \
         && rm -rf /var/cache/apk/*
 
 RUN cp /usr/share/zoneinfo/Asia/Seoul /etc/localtime
