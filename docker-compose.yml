@@ -28,9 +28,9 @@ services:
 
     environment:
       - TZ=Asia/Seoul
-      
+
       - MYSQL_ROOT_PASSWROD=secret
-      - MYSQL_DATABASE=laravel_project
+      - MYSQL_DATABASE=LARAVELDB
       - MYSQL_USER=laravel
       - MYSQL_PASSWORD=secret
 

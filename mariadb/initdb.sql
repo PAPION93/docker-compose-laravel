@@ -1,4 +1,4 @@
--- CREATE TABLE laraveLARAVELDBl_project.posts(
+-- CREATE TABLE LARAVELDB.posts(
 --     id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 --     title VARCHAR(255),
 --     body TEXT
