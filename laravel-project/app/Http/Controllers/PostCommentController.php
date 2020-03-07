@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PostsController extends Controller
+class PostCommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,6 @@ class PostsController extends Controller
     public function index()
     {
         //
-        echo 'hello index';
     }
 
     /**
@@ -25,8 +24,6 @@ class PostsController extends Controller
     public function create()
     {
         //
-        echo '1';
-
     }
 
     /**
@@ -38,7 +35,6 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         //
-        echo '1';
     }
 
     /**
@@ -61,7 +57,6 @@ class PostsController extends Controller
     public function edit($id)
     {
         //
-        
     }
 
     /**
@@ -74,8 +69,6 @@ class PostsController extends Controller
     public function update(Request $request, $id)
     {
         //
-        echo 'put';
-
     }
 
     /**
@@ -87,6 +80,5 @@ class PostsController extends Controller
     public function destroy($id)
     {
         //
-        echo 'delete';
     }
 }
