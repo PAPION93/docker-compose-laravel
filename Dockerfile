@@ -5,7 +5,7 @@ FROM php:7.4.3-fpm-alpine3.11 AS custom-laravel
 WORKDIR /root
 
 RUN apk update \
-        && apk add -u vim procps tzdata bash curl libzip libzip-dev mysql-client \
+        && apk add -u vim procps tzdata bash curl libzip libzip-dev \
         && rm -rf /var/cache/apk/*
 
 RUN cp /usr/share/zoneinfo/Asia/Seoul /etc/localtime
@@ -13,7 +13,7 @@ RUN echo "Asia/Seoul" > /etc/timezone
 
 # step 3
 # Composer Install
-RUN curl -sS https://getcomposer.org/installer | php  
+RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/bin/composer
 
 # step 4
