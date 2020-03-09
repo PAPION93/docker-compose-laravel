@@ -15,6 +15,7 @@ RUN echo "Asia/Seoul" > /etc/timezone
 # Composer Install
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/bin/composer
+RUN export PATH=$PATH:~/.composer/vendor/bin/
 
 # step 4
 # PHP Extension Install
